@@ -7,7 +7,9 @@ const Tab = createBottomTabNavigator();
 
 function SampleBottomTabNavigator() {
     return (
-        <Tab.Navigator>
+        <Tab.Navigator
+            initialRouteName="Home"
+        >
             <Tab.Screen name="Home" component={HomeScreen} />
             <Tab.Screen name="TabTwo" component={TabTwoScreen} />
         </Tab.Navigator>

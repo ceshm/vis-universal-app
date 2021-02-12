@@ -1,25 +1,24 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/native';
-import { Platform, Text, View } from 'react-native';
+import { Platform, Text } from 'react-native';
 import DateInput from './shared/DateInput';
 
 const Container = styled.View`
   border-bottom-color: aqua;
-  min-width: 200px;
+  width: 100%;
 `;
 
 function TimeSpentForm() {
-  const [date, setDate] = useState(new Date(1598051730000));
+  const [date, setDate] = useState(new Date());
 
   const onDateChange = (event: any, selectedDate: any) => {
+    console.log('onDateChange', typeof event, event, typeof selectedDate, selectedDate);
     const currentDate = selectedDate || date;
     setDate(currentDate);
   };
 
   return (
     <Container>
-      <Text>{Platform.OS}</Text>
-
       <DateInput date={date} onChange={onDateChange} />
 
     </Container>

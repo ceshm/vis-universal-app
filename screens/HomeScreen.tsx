@@ -17,7 +17,6 @@ const Title = styled.Text`
 const ChartSpace = styled.View`
   border-color: gray;
   border-width: 1px;
-  padding: 16px;
 `;
 
 export default function HomeScreen() {
@@ -25,9 +24,7 @@ export default function HomeScreen() {
     <Container>
       <Title>Tab One</Title>
 
-      <ChartSpace>
-        <TimeSpentForm />
-      </ChartSpace>
+      <TimeSpentForm />
     </Container>
   );
 }

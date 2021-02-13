@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Platform, LayoutAnimation } from 'react-native';
+import { View, Platform } from 'react-native';
 import DateTimePicker from './DateTimePicker';
 import styled from 'styled-components/native';
 import i18n from 'i18n-js';

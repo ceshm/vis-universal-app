@@ -49,8 +49,7 @@ function CollapsiblePicker(props: any) {
     <Container>
       <HeaderButton
         onPress={() => {
-          const setTo = Platform.OS === 'android' ? true : !show;
-          setShow(setTo);
+          setShow(!show);
           LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
         }}
         activeOpacity={1}

@@ -22,7 +22,7 @@ function DateInput({ date, onChange }: any) {
         label="Date"
         value={i18n.strftime(date, '%A, %B %d, %Y')}
       >
-        <View style={{ height: 308 }}>
+        <View style={{ height: Platform.OS === 'android' ? 0 : 308 }}>
           <DateTimePicker
             testID="dateTimePicker"
             value={date}

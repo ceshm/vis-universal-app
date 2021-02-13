@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 
 import DateInput from './shared/DateInput';
 import AspectPicker from './shared/AspectPicker';
-import Breakpoints from '../constants/Breakpoints';
+import useMediaQueries from '../hooks/useMediaQueries';
 
 
 const Container = styled.ScrollView`
@@ -28,12 +28,7 @@ const BottomContainer = styled.View`
 
 function TimeSpentForm() {
   const [date, setDate] = useState(new Date());
-
-  const isTabletOrMobileDevice = useMediaQuery({
-    maxDeviceWidth: 1224,
-    // alternatively...
-    query: '(max-device-width: 1224px)',
-  });
+  const { isPhone } = useMediaQueries();
 
   const onDateChange = (event: any, selectedDate: any) => {
     const currentDate = selectedDate || date;
@@ -42,7 +37,7 @@ function TimeSpentForm() {
 
   return (
     <Container>
-      <Form isMobile={isTabletOrMobileDevice}>
+      <Form isMobile={isPhone}>
         <DateInput date={date} onChange={onDateChange} />
 
         <AspectPicker />

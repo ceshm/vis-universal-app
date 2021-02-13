@@ -21,17 +21,19 @@ function DateInput({ date, onChange }: any) {
         label="Date"
         value={i18n.strftime(date, '%A, %B %d, %Y')}
       >
-        <DateTimePicker
-          testID="dateTimePicker"
-          value={date}
-          mode="date"
-          is24Hour
-          display={Platform.OS === 'ios' ? 'inline' : 'default'}
-          onChange={(event: any, selectedDate: any) => {
-            if (Platform.OS === 'android') setShow(false);
-            onChange(event, selectedDate);
-          }}
-        />
+        <View style={{ height: 308 }}>
+          <DateTimePicker
+            testID="dateTimePicker"
+            value={date}
+            mode="date"
+            is24Hour
+            display={Platform.OS === 'ios' ? 'inline' : 'default'}
+            onChange={(event: any, selectedDate: any) => {
+              if (Platform.OS === 'android') setShow(false);
+              onChange(event, selectedDate);
+            }}
+          />
+        </View>
       </CollapsiblePicker>
     </Container>
   );

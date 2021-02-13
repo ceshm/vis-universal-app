@@ -36,7 +36,6 @@ function TimeSpentForm() {
   });
 
   const onDateChange = (event: any, selectedDate: any) => {
-    console.log('onDateChange', typeof event, event, typeof selectedDate, selectedDate);
     const currentDate = selectedDate || date;
     setDate(currentDate);
   };
